@@ -85,7 +85,7 @@ func InsertTransaksi(db *sql.DB, t structs.Transaksi) error {
 	_, err = tx.Exec(`INSERT INTO transaksi 
 		(kode_pelanggan, kode_barang, kode_mata_uang, jumlah_barang, total_harga, tanggal, created_at, created_by, modified_at, modified_by) 
 		VALUES ($1, $2, $3, $4, $5, $6, NOW(), $7, NOW(), $8)`,
-		t.KodePelanggan, t.KodeBarang, t.KodeMataUang, t.JumlahBarang, t.TotalHarga, t.Tanggal, t.CreatedBy,t.ModifiedBy
+		t.KodePelanggan, t.KodeBarang, t.KodeMataUang, t.JumlahBarang, t.TotalHarga, t.Tanggal, t.CreatedBy, t.ModifiedBy,
 	)
 	if err != nil {
 		return err
